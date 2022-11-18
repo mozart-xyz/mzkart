@@ -29,7 +29,7 @@ public class KartAudio : KartComponent
 
         Kart.Controller.OnSpinoutChanged += val => {
             if ( !val ) return;
-            AudioManager.PlayAndFollow("slipSFX", transform, AudioManager.MixerTarget.SFX);
+            AudioManager.PlayAndFollow("boomSFX", transform, AudioManager.MixerTarget.SFX);
         };
         
         Kart.Controller.OnBoostTierIndexChanged += val => {

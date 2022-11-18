@@ -17,7 +17,7 @@
                 {
                     manager = Component.FindObjectOfType<MozartManager>();
                 }
-                else
+                if(manager == null)
                 {
                     manager = findManager.GetComponent<MozartManager>();
                 }

@@ -33,6 +33,10 @@
 */
         public string name;
 
+        public string itemKey;
+
+        public int price;
+
         /*[string] The image associated with the NFT. This will be shown on third party marketplaces such as OpenSea.
 */
         public string image;

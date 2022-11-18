@@ -30,7 +30,10 @@ public class KartController : KartComponent
 	public float driftRotationLerpFactor = 10f;
 
 	public Rigidbody Rigidbody;
-
+	public GameObject LaserGunSystemGO;
+	public WSP_LaserBeamWS LaserBeamSystem;
+	public GameObject LaserBeamTarget;
+	
 	public bool IsBumped => !BumpTimer.ExpiredOrNotRunning(Runner);
 	public bool IsBackfire => !BackfireTimer.ExpiredOrNotRunning(Runner);
 	public bool IsHopping => !HopTimer.ExpiredOrNotRunning(Runner);
@@ -50,6 +53,9 @@ public class KartController : KartComponent
 	public int BoostTierIndex { get; set; }
 
 	[Networked] public TickTimer BoostpadCooldown { get; set; }
+
+	[Networked] public TickTimer WeaponFiringActive { get; set; }
+
 
 	[Networked(OnChanged = nameof(OnDriftTierIndexChangedCallback))]
 	public int DriftTierIndex { get; set; } = -1;
@@ -201,6 +207,33 @@ public class KartController : KartComponent
 		Steer(Inputs);
 		UpdateTireYaw(Inputs);
 		UseItems(Inputs);
+		//HandleMachineGunTargeting();
+	}
+
+    private void HandleMachineGunTargeting()
+    {
+		if (!WeaponFiringActive.ExpiredOrNotRunning(Runner))
+        {
+			Debug.Log("FindingTARGETFORGUN");
+			var forward = (Rigidbody.rotation * Vector3.forward);
+			RaycastHit info;
+			LaserBeamSystem.LaserBeamActive = true;
+			LaserBeamTarget.transform.position = (this.transform.position + (forward * 50f));
+			bool didHit = Runner.GetPhysicsScene().Raycast(this.transform.position + (forward * 2f), forward, out info, 50f, LayerMask.GetMask(new string[] { "Kart" }), QueryTriggerInteraction.Collide);
+			if (didHit)
+			{
+				KartController target = info.rigidbody.gameObject.GetComponent<KartController>();
+				if(target != this && target.IsSpinout == false)
+                {
+					info.rigidbody.gameObject.GetComponent<KartController>().IsSpinout = true;
+				}
+			}
+		}
+        else
+        {
+			LaserBeamSystem.LaserBeamActive = false;
+			if (LaserGunSystemGO.activeInHierarchy) LaserGunSystemGO.SetActive(false);
+		}
 	}
 
 	private void UseItems(KartInput.NetworkInputData inputs)
@@ -471,6 +504,18 @@ public class KartController : KartComponent
 		BoostTierIndex = 0;
 		BoostEndTick = -1;
 		MaxSpeed = maxSpeedNormal;
+	}
+
+	public void ActivateMachineGun()
+    {
+		LaserGunSystemGO.SetActive(true);
+		if(LaserBeamSystem.CurrentTarget == null)
+        {
+			GameObject laserTarget = new GameObject();
+			LaserBeamSystem.AssignNewTarget(laserTarget.transform);
+			LaserBeamTarget = laserTarget;
+        }
+		WeaponFiringActive = TickTimer.CreateFromSeconds(Runner, 4f);
 	}
 
 	public void GiveBoost(bool isBoostpad, int tier = 1)

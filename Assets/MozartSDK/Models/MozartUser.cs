@@ -24,6 +24,6 @@
         public string username;
         public string profile_image_url;
         public List<NFTItem> inventory;
-        public decimal balance_usd;
+        public int balance;
     }
 }

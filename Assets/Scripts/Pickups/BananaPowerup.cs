@@ -8,7 +8,7 @@ public class BananaPowerup : SpawnedPowerup {
 
     public new Collider collider;
     public float enableDelay = 0.5f;
-    
+    public GameObject explosionPrefab;
     [Networked] public TickTimer CollideTimer { get; set; }
     
     private void Awake() {
@@ -22,7 +22,7 @@ public class BananaPowerup : SpawnedPowerup {
     public override void Spawned() {
         base.Spawned();
 
-        AudioManager.PlayAndFollow("bananaDropSFX", transform, AudioManager.MixerTarget.SFX);
+        AudioManager.PlayAndFollow("bumpSFX", transform, AudioManager.MixerTarget.SFX);
 
         //
         // We create a timer to count down so that the kart who spawned this object has time to drive away before the 
@@ -45,9 +45,18 @@ public class BananaPowerup : SpawnedPowerup {
         if ( Object.IsValid && !HasInit ) return false;
 
         kart.SpinOut();
-
+        
+        StartCoroutine(showExplosion());
         Runner.Despawn(Object, true);
-
         return true;
+    }
+
+    private IEnumerator showExplosion()
+    {
+        NetworkObject boom = Runner.Spawn(explosionPrefab, Object.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        Runner.Despawn(boom, true);
+
+
     }
 }
