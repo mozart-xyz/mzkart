@@ -10,24 +10,12 @@ public class KartGameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager.onLoggedInEvent += LoggedIn;
-        manager.onUserDataChanged += UserDataChanged;
-    }
-
-    void LoggedIn()
-    {
-        manager.userData.balance = 1000;
-        UserDataChanged();
+        manager.onStoreLoadedEvent -= UserDataChanged;
+        manager.onStoreLoadedEvent += UserDataChanged;
     }
 
     void UserDataChanged()
     {
-        balanceLabel.text = manager.userData.balance.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        balanceLabel.text = manager.userData.extraData.balances[0].GetBalance().ToString();
     }
 }

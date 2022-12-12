@@ -11,6 +11,7 @@ public class BuyKartController : MozartBehaviorBase
     public GameObject lockOverlay;
     public NFTItem item;
     public bool isLocked = false;
+    public TMPro.TextMeshProUGUI priceLabel;
 
     public void Awake()
     {
@@ -22,13 +23,14 @@ public class BuyKartController : MozartBehaviorBase
 
     public void OnEnable()
     {
-        item = GetManager().GetItemByKey(itemKey);
+        item = GetManager().GetItemByItemName(itemKey);
         DrawButtonState();
     }
 
     public void DrawButtonState()
     {
-        isLocked = !GetManager().UserHasItem(itemKey);
+        priceLabel.text = item.price;
+        isLocked = !GetManager().GetItemIsOwnedByName(itemKey);
         //carImage.sprite = Resources.Load<Sprite>(itemKey);
         lockOverlay.SetActive(isLocked);
         GetComponent<Button>().interactable = !isLocked;
@@ -36,9 +38,9 @@ public class BuyKartController : MozartBehaviorBase
 
     public void BuyItem()
     {
-        if(GetManager().userData.balance > item.price)
+        if(GetManager().userData.extraData.balances[0].GetBalance() > int.Parse(item.price))
         {
-            GetManager().BuyItem(item);
+            GetManager().BuyItem(item.itemTemplateId);
         }
     }
 }
