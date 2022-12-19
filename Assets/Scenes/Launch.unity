@@ -10323,11 +10323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1340.2
+      value: -1500
       objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -730.7
+      value: -651
       objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20384,7 +20384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30865,7 +30865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31627,8 +31627,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1240885935}
     m_Modifications:
     - target: {fileID: 6205000520957937993, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 476.486
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205000520957937993, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 476.486
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205000520957937993, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000030517578
+      value: -722
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205000520957937993, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -289
       objectReference: {fileID: 0}
     - target: {fileID: 6205000521026687000, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -31724,7 +31736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6205000521026687001, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -25
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 6205000521026687001, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -31745,6 +31757,10 @@ PrefabInstance:
     - target: {fileID: 6205000521026687002, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_Name
       value: MozartLoginWidget
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205000521026687013, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
+      propertyPath: enableQRCodeAuthentication
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6205000521026687015, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_Color.b

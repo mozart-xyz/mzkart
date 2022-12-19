@@ -9,6 +9,9 @@
         public string GameIdentifier;
         public bool logging = false;
         public string apiBaseUrl = "https://staging-api-ij1y.onrender.com";
+
+        public string GameCurrencyIdentifier;
+
         public void Log(string message)
         {
             if (logging) Debug.Log(message);

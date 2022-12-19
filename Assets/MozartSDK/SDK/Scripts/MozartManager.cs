@@ -218,15 +218,15 @@
         {
             string jwt = SessionToken;
             string gameId = settings.GameIdentifier;
-            Application.OpenURL("https://mz-app-staging.onrender.com/" + gameId + "/" + jwt);
+            Application.OpenURL("https://mz-app-staging.onrender.com/" + gameId + "/" + settings.GameCurrencyIdentifier + "/" + jwt);
             StartCoroutine(PollForFundsChange());
         }
 
         IEnumerator PollForFundsChange()
         {
-            int startingBalance = userData.extraData.balances[0].GetBalance();
+            int startingBalance = userData.GetBalance();
             int retryCount = 0;
-            while (startingBalance == userData.extraData.balances[0].GetBalance() && retryCount < 50)
+            while (startingBalance == userData.GetBalance() && retryCount < 50)
             {
                 retryCount++;
                 yield return new WaitForSeconds(5f);

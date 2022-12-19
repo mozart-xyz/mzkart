@@ -9,6 +9,15 @@
     public class MozartUser
     {
 
+        public int GetBalance()
+        {
+            if(this.extraData != null && this.extraData.balances != null && this.extraData.balances.Count > 0)
+            {
+                return this.extraData.balances[0].GetBalance();
+            }
+            return 0;
+        }
+
         public MeResponse extraData;
         /*![string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
         public string id;

@@ -16,6 +16,9 @@ public class KartGameData : MonoBehaviour
 
     void UserDataChanged()
     {
-        balanceLabel.text = manager.userData.extraData.balances[0].GetBalance().ToString();
+        if(manager.userData != null && manager.userData.extraData != null && manager.userData.extraData.balances != null && manager.userData.extraData.balances.Count > 0)
+        {
+            balanceLabel.text = manager.userData.extraData.balances[0].GetBalance().ToString();
+        }
     }
 }

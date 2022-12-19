@@ -38,7 +38,7 @@ public class BuyKartController : MozartBehaviorBase
 
     public void BuyItem()
     {
-        if(GetManager().userData.extraData.balances[0].GetBalance() > int.Parse(item.price))
+        if(GetManager().userData.GetBalance() > int.Parse(item.price))
         {
             GetManager().BuyItem(item.itemTemplateId);
         }
