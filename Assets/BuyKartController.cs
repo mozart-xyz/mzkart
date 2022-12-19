@@ -24,7 +24,14 @@ public class BuyKartController : MozartBehaviorBase
     public void OnEnable()
     {
         item = GetManager().GetItemByItemName(itemKey);
+        GetManager().onUserChangedEvent -= DrawButtonState;
+        GetManager().onUserChangedEvent += DrawButtonState;
         DrawButtonState();
+    }
+
+    public void OnDisable()
+    {
+        GetManager().onUserChangedEvent -= DrawButtonState;
     }
 
     public void DrawButtonState()
@@ -38,7 +45,7 @@ public class BuyKartController : MozartBehaviorBase
 
     public void BuyItem()
     {
-        if(GetManager().userData.GetBalance() > int.Parse(item.price))
+        if(GetManager().userData.GetBalance() >= int.Parse(item.price))
         {
             GetManager().BuyItem(item.itemTemplateId);
         }

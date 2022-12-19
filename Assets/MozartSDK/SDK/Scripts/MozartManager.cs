@@ -84,7 +84,14 @@
         void Awake()
         {
             if (!instance) instance = this;
-            UnityEngine.Object.DontDestroyOnLoad(this.gameObject);
+            try
+            {
+                UnityEngine.Object.DontDestroyOnLoad(this.gameObject);
+            }
+            catch(Exception e)
+            {
+
+            }
         }
 
         /// <summary>
