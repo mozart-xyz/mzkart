@@ -6194,6 +6194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialNFTUnlock
       objectReference: {fileID: 0}
+    - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10256,6 +10260,10 @@ PrefabInstance:
     - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Name
       value: TutorialBubble (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Pivot.x
@@ -16024,6 +16032,10 @@ PrefabInstance:
     - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Name
       value: TutorialMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Pivot.x
@@ -26263,9 +26275,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 17892271}
     m_Modifications:
+    - target: {fileID: 1598651604882235261, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
+      propertyPath: m_text
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: itemKey
-      value: black_car
+      value: Car_Red
       objectReference: {fileID: 0}
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: priceLabel
@@ -31027,7 +31043,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: itemKey
-      value: yellow_car
+      value: Car_Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: priceLabel
@@ -31760,7 +31776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6205000521026687013, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: enableQRCodeAuthentication
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6205000521026687015, guid: c5b1167a501824602b66c4dbdf9e5975, type: 3}
       propertyPath: m_Color.b
@@ -41851,6 +41867,10 @@ PrefabInstance:
     - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Name
       value: TutorialBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109035876095787701, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8608319555539043206, guid: 83eaeeff6799d459f861581962bf5904, type: 3}
       propertyPath: m_Pivot.x

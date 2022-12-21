@@ -15,7 +15,7 @@ public class TutorialPointController : MonoBehaviour
         cg.alpha = 0f;
         if(startNode)
         {
-            Show();
+            //Show();
         }
     }
 
@@ -27,7 +27,7 @@ public class TutorialPointController : MonoBehaviour
         {
             nextStep.Show();
         }
-        StartCoroutine(DeactivateLater(fadeTime));
+        //StartCoroutine(DeactivateLater(fadeTime));
     }
 
     public IEnumerator DeactivateLater(float when)

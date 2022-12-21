@@ -11,9 +11,15 @@
 
         public int GetBalance()
         {
-            if(this.extraData != null && this.extraData.balances != null && this.extraData.balances.Count > 0)
+            if (this.extraData != null && this.extraData.balances != null && this.extraData.balances.Count > 0)
             {
-                return this.extraData.balances[0].GetBalance();
+                foreach(V1FtsBalances balance in this.extraData.balances)
+                {
+                    if(balance.ftId == MozartManager.instance.settings.GameCurrencyIdentifier)
+                    {
+                        return balance.GetBalance();
+                    }
+                }
             }
             return 0;
         }

@@ -84,14 +84,7 @@
         void Awake()
         {
             if (!instance) instance = this;
-            try
-            {
-                UnityEngine.Object.DontDestroyOnLoad(this.gameObject);
-            }
-            catch(Exception e)
-            {
-
-            }
+            UnityEngine.Object.DontDestroyOnLoad(this.gameObject);
         }
 
         /// <summary>
@@ -116,6 +109,7 @@
             webs.GetRequest<MeResponse>("/v1/client/me?gameId=" + webs.mozartSettings.GameIdentifier, (MeResponse response) =>
             {
                 userData.extraData = response;
+                if(settings.logging) Debug.Log(JsonUtility.ToJson(response));
                 if (onUserChangedEvent != null) onUserChangedEvent();
                 PopulateInventory();
             });
@@ -209,9 +203,12 @@
             webs.GetRequest<List<ForSaleFactoryNft>>("/v1/client/factory_items/for_sale?gameId=" + webs.mozartSettings.GameIdentifier, (List<ForSaleFactoryNft> forSale) =>
             {
                 storeItems.Clear();
+               
                 foreach (ForSaleFactoryNft nft in forSale)
                 {
+
                     NFTItem newItem = new NFTItem { name = nft.name, image = nft.imageUrl, price = nft.price, priceTokenName = nft.priceTokenName, priceTokenId = nft.priceTokenId, itemTemplateId=nft.factoryListingId };
+                    if (settings.logging) Debug.Log(JsonUtility.ToJson(newItem));
                     storeItems.Add(newItem);
                 }
                 if (onStoreLoadedEvent != null) onStoreLoadedEvent();

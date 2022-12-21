@@ -24,8 +24,8 @@ public class BuyKartController : MozartBehaviorBase
     public void OnEnable()
     {
         item = GetManager().GetItemByItemName(itemKey);
-        GetManager().onUserChangedEvent -= DrawButtonState;
-        GetManager().onUserChangedEvent += DrawButtonState;
+        GetManager().onInventoryLoadedEvent -= DrawButtonState;
+        GetManager().onInventoryLoadedEvent += DrawButtonState;
         DrawButtonState();
     }
 
@@ -38,7 +38,6 @@ public class BuyKartController : MozartBehaviorBase
     {
         priceLabel.text = item.price;
         isLocked = !GetManager().GetItemIsOwnedByName(itemKey);
-        //carImage.sprite = Resources.Load<Sprite>(itemKey);
         lockOverlay.SetActive(isLocked);
         GetComponent<Button>().interactable = !isLocked;
     }
