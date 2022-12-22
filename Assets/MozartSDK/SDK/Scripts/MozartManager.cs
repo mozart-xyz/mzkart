@@ -222,7 +222,8 @@
         {
             string jwt = SessionToken;
             string gameId = settings.GameIdentifier;
-            Application.OpenURL("https://mz-app-staging.onrender.com/" + gameId + "/" + settings.GameCurrencyIdentifier + "/" + jwt);
+            //https://staging-dashboard-4we0.onrender.com/checkout?gameId={GAMEID}&ftId={FTID}&jwt={JWT}
+            Application.OpenURL("https://staging-dashboard-4we0.onrender.com/checkout?gameId=" + gameId + "&ftId=" + settings.GameCurrencyIdentifier + "&jwt=" + jwt);
             StartCoroutine(PollForFundsChange());
         }
 
