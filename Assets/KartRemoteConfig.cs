@@ -8,6 +8,7 @@ using UnityEngine;
 public class KartRemoteData
 {
     public string api_url = "";
+    public string dashboard_url = "";
     public string token_id = "";
     public string game_id = "";
     public string car_1 = "";
@@ -26,6 +27,7 @@ public class KartRemoteConfig : MozartBehaviorBase
             base.GetManager().settings.apiBaseUrl = data.api_url;
             base.GetManager().settings.GameCurrencyIdentifier = data.token_id;
             base.GetManager().settings.GameIdentifier = data.game_id;
+            base.GetManager().settings.DashboardUrl = data.dashboard_url;
         }, true);
     }
 }

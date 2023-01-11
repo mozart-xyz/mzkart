@@ -5,7 +5,7 @@
     [CreateAssetMenu(fileName = "Settings", menuName = "MozartSDK/CreateSettings", order = 1)]
     public class SettingsTemplate : ScriptableObject
     {
-        public string APIPublicKey;
+        public string DashboardUrl = "https://testnet-dashboard.mozart.xyz";
         public string GameIdentifier;
         public string GameCurrencyIdentifier;
         public bool logging = false;
