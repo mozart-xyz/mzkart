@@ -1,8 +1,8 @@
 {
-    "api_url": "https://staging-api-ij1y.onrender.com",
-    "token_id": "MZCN",
-    "game_id":"@MZKART",
+    "api_url": "https://testnet-api.mozart.xyz",
+    "token_id": "JFwZnxoEceu",
+    "game_id":"B98Fkb6bk7o",
     "car_1": "green_car",
     "car_2": "yellow_car",
-    "car_3": "blue_car",
+    "car_3": "blue_car"
 }

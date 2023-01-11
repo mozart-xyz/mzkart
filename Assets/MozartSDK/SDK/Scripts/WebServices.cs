@@ -51,8 +51,11 @@
             
             www.timeout = 20;
             string bearerToken = "Bearer " + manager.SessionToken;
-            www.SetRequestHeader("Authorization", bearerToken);
-            www.SetRequestHeader("Content-Type", "application/json");
+            if(!rewriteUrl)
+            { 
+                www.SetRequestHeader("Authorization", bearerToken);
+                www.SetRequestHeader("Content-Type", "application/json");
+            }
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
