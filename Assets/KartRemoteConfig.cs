@@ -26,6 +26,6 @@ public class KartRemoteConfig : MozartBehaviorBase
             base.GetManager().settings.apiBaseUrl = data.api_url;
             base.GetManager().settings.GameCurrencyIdentifier = data.token_id;
             base.GetManager().settings.GameIdentifier = data.game_id;
-        });
+        }, true);
     }
 }

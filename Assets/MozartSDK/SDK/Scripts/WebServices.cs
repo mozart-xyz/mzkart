@@ -23,9 +23,9 @@
 
         }
 
-        public void GetRequest<T>(string url, UnityAction<T> callback)
+        public void GetRequest<T>(string url, UnityAction<T> callback, bool rewriteUrl=false)
         {
-            StartCoroutine(DoGetRequest<T>(url, callback));
+            StartCoroutine(DoGetRequest<T>(url, callback, "GET", null, rewriteUrl));
         }
 
         public void PostRequest<T>(string url, string postData, UnityAction<T> callback)
@@ -33,13 +33,15 @@
             StartCoroutine(DoGetRequest<T>(url, callback, "POST", postData));
         }
 
-        private IEnumerator DoGetRequest<T>(string url, UnityAction<T> completeCallback, string method = "GET", string postData = null)
+        private IEnumerator DoGetRequest<T>(string url, UnityAction<T> completeCallback, string method = "GET", string postData = null, bool rewriteUrl = false)
         {
             UnityWebRequest www = null;
-            if (method == "GET") www = UnityWebRequest.Get(mozartSettings.apiBaseUrl + url);
+            string useUrl = url;
+            if (rewriteUrl == false) useUrl = mozartSettings.apiBaseUrl + url; 
+            if (method == "GET") www = UnityWebRequest.Get(useUrl);
             if (method == "POST")
             {
-                www = new UnityWebRequest(mozartSettings.apiBaseUrl + url, "POST");
+                www = new UnityWebRequest(useUrl, "POST");
                 byte[] bodyRaw = Encoding.UTF8.GetBytes(postData);
                 UploadHandler handler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
                 handler.contentType = "application/json";
