@@ -40,7 +40,6 @@
     /// </summary>
     public class MozartSDKLoginButton : MozartBehaviorBase
     {
-        private string AUTH_URL_BASE = "https://staging-api-ij1y.onrender.com/v1/auth";
         [SerializeField]
         private Button LoginButton;
         [SerializeField]
@@ -78,7 +77,7 @@
 
         private void Awake()
         {
-            AUTH_URL_BASE = mozartSettings.apiBaseUrl;
+
         }
 
         private LOGIN_STATE state = LOGIN_STATE.WAITING_FOR_LOGIN;
@@ -96,7 +95,7 @@
 
         IEnumerator GetLoginToken()
         {
-            var request = UnityWebRequest.Get(AUTH_URL_BASE + "/v1/auth/login?gameId=" + mozartSettings.GameIdentifier);
+            var request = UnityWebRequest.Get(mozartSettings.apiBaseUrl + "/v1/auth/login?gameId=" + mozartSettings.GameIdentifier);
             Debug.Log("Hitting login:" + request.url);
             // Wait for the response and then get our data
             yield return request.SendWebRequest();
@@ -123,7 +122,7 @@
         IEnumerator CheckForAuthentication()
         {
             int tryCount = 0;
-            string oauthURL = AUTH_URL_BASE + "/v1/auth/login_status?oauthState=" + loginToken;
+            string oauthURL = mozartSettings.apiBaseUrl + "/v1/auth/login_status?oauthState=" + loginToken;
             mozartSettings.Log("OAUTH URL::" + oauthURL);
             mozartSettings.Log("Token:" + loginToken);
             while (state == LOGIN_STATE.WAITING_FOR_LOGIN)

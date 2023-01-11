@@ -11,8 +11,7 @@
     using UnityEngine.Networking;
 
     public class WebServices : MonoBehaviour
-    {
-        public static string serverRoot = "https://staging-api-ij1y.onrender.com";
+    { 
         public SettingsTemplate mozartSettings;
         public MozartManager manager;
         public bool logging = false;
@@ -21,7 +20,7 @@
 
         private void Awake()
         {
-            serverRoot = mozartSettings.apiBaseUrl;
+
         }
 
         public void GetRequest<T>(string url, UnityAction<T> callback)
@@ -37,10 +36,10 @@
         private IEnumerator DoGetRequest<T>(string url, UnityAction<T> completeCallback, string method = "GET", string postData = null)
         {
             UnityWebRequest www = null;
-            if (method == "GET") www = UnityWebRequest.Get(serverRoot + url);
+            if (method == "GET") www = UnityWebRequest.Get(mozartSettings.apiBaseUrl + url);
             if (method == "POST")
             {
-                www = new UnityWebRequest(serverRoot + url, "POST");
+                www = new UnityWebRequest(mozartSettings.apiBaseUrl + url, "POST");
                 byte[] bodyRaw = Encoding.UTF8.GetBytes(postData);
                 UploadHandler handler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
                 handler.contentType = "application/json";
