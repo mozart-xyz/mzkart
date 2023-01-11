@@ -1,8 +1,8 @@
 {
-    "api_url": "https://testnet-api.mozart.xyz",
-    "token_id": "JFwZnxoEceu",
-    "game_id":"@mozart_kart2",
-    "car_1": "green_car",
-    "car_2": "yellow_car",
-    "car_3": "blue_car"
+  "api_url": "https://staging-api-ij1y.onrender.com",
+  "game_id": "@mzkart",
+  "token_id": "@mzkart.__default_ft__",
+  "car_1": "@mzkart.__default_collection__.green_car",
+  "car_2": "@mzkart.__default_collection__.yellow_car",
+  "car_3": "@mzkart.__default_collection__.blue_car"
 }
