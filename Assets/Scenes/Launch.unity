@@ -6065,7 +6065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 46.767456, y: -0.000012295681}
+  m_AnchoredPosition: {x: 46.767456, y: 0}
   m_SizeDelta: {x: 46.76758, y: 46.76758}
   m_Pivot: {x: 0.999997, y: -0.00000026291036}
 --- !u!114 &264425132
@@ -26357,7 +26357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: itemKey
-      value: Car_Red
+      value: green_car
       objectReference: {fileID: 0}
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: priceLabel
@@ -31119,7 +31119,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: itemKey
-      value: Car_Yellow
+      value: yellow_car
       objectReference: {fileID: 0}
     - target: {fileID: 3308658982696373741, guid: 1a8d8a72644c64458acf1b08aa552713, type: 3}
       propertyPath: priceLabel

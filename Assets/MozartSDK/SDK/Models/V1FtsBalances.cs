@@ -19,6 +19,7 @@ public class V1FtsBalances
 		/*[string] The balance of this FT that this User has.*/
 		public string balance = "";
 
+		public string ftKey = "";
 		public string name = "";
 
 		public int GetBalance()
