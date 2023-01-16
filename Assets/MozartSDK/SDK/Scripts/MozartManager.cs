@@ -100,6 +100,10 @@
             if (onLoggedInEvent != null) onLoggedInEvent.Invoke();
         }
 
+        public void SetConfigVersion(string version)
+        {
+            Debug.Log("SETTING CONFIG VERSION TO" + version);
+        }
         /// <summary>
         /// Requests additional user data like balances, nfts, and user info
         /// The MozartSDKLoginButton has logic to automatically call this.

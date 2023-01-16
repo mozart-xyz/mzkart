@@ -111,7 +111,9 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-            unityInstance.SendMessage("MozartManager",CONFIG_URL);
+            setTimeout(()=>{
+              unityInstance.SendMessage("MozartManager","SetConfigVersion","0.115");
+            },1000);
           };
         }).catch((message) => {
           alert(message);
