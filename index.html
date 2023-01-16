@@ -64,7 +64,8 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Mozart",
         productName: "Mozart Karts",
-        productVersion: "0.1",
+        //**************** NOTE:: PROJECT VERSION BELOW CONTROLS IF GAME WILL RUN ON TEST NET OR STAGING.  VERIONS ABOVE 1 WILL BE LIVE.  BELOW 1 WILL BE TEST ***/
+        productVersion: "0.53",
         showBanner: unityShowBanner,
       };
 
@@ -110,6 +111,7 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
+            unityInstance.SendMessage("MozartManager",CONFIG_URL);
           };
         }).catch((message) => {
           alert(message);
