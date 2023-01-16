@@ -22,7 +22,7 @@ public class KartRemoteConfig : MozartBehaviorBase
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("VERSION:" + Application.version);
+        Debug.Log("VERSION  :" + Application.version);
         Application.ExternalCall("PlayerLoaded", null);
         string configUrl = "https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json";
         if (float.Parse(Application.version) < 1f)
