@@ -24,6 +24,12 @@
       </div>
     </div>
     <script>
+      function PlayerLoaded()
+      {
+        alert("PLAYER LOAD COMPLETED CALLED FROM C#");
+        u.SendMessage("MozartManager","SetConfigVersion","0.115");
+      }
+      var u = null;
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -113,9 +119,7 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-            setTimeout(()=>{
-              unityInstance.SendMessage("MozartManager","SetConfigVersion","0.115");
-            },1000);
+            u = unityInstance;
           };
         }).catch((message) => {
           alert(message);
