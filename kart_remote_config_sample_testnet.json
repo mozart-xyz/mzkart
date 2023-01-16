@@ -1,0 +1,8 @@
+{
+  "api_url": "https://testnet-api.mozart.xyz",
+  "token_id": "JFwZnxoEceu",
+  "game_id": "@mozart_kart2",
+  "car_1": "@mzkart3.__default_collection__.red_car",
+  "car_2": "@mzkart3.__default_collection__.green_car",
+  "car_3": "@mzkart3.__default_collection__.yellow_car"
+}

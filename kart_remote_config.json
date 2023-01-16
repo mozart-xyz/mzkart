@@ -1,9 +1,9 @@
 {
-  "api_url": "https://staging-api-ij1y.onrender.com",
-  "dashboard_url": "https://staging-dashboard-4we0.onrender.com",
+  "api_url": "https://testnet-api.mozart.xyz",
+  "dashboard_url": "https://testnet-dashboard.mozart.xyz",
   "game_id": "@mzkart",
   "token_id": "@mzkart.__default_ft__",
-  "car_1": "@mzkart.__default_collection__.green_car",
-  "car_2": "@mzkart.__default_collection__.yellow_car",
-  "car_3": "@mzkart.__default_collection__.blue_car"
+  "car_1": "@mzkart.__default_collection__.red_car",
+  "car_2": "@mzkart.__default_collection__.green_car",
+  "car_3": "@mzkart.__default_collection__.yellow_car"
 }
