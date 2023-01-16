@@ -23,14 +23,14 @@ public class KartRemoteConfig : MozartBehaviorBase
     void Start()
     {
         Debug.Log("VERSION  :" + Application.version);
+        GetManager().onReady += TriggerLoadServerConfig;
         Application.ExternalCall("PlayerLoaded", null);
-        string configUrl = "https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json";
-        if (float.Parse(Application.version) < 1f)
-        {
-            Debug.Log("TEST MODE ACTIVATED");
-            configUrl = "https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config_test.json";
-        }
-        base.GetManager().webs.GetRequest<KartRemoteData>(configUrl, (KartRemoteData data) =>
+        
+    }
+
+    void TriggerLoadServerConfig()
+    {
+        base.GetManager().webs.GetRequest<KartRemoteData>(base.GetManager().configURL, (KartRemoteData data) =>
         {
             base.GetManager().settings.apiBaseUrl = data.api_url;
             base.GetManager().settings.GameCurrencyIdentifier = data.token_id;

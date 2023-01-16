@@ -25,10 +25,11 @@
     </div>
     <script>
       var __U = null;
+      var CONFIG_URL = "https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json"
       function PlayerLoaded()
       {
         alert("PLAYER LOAD COMPLETED CALLED FROM C#");
-        __U.SendMessage("MozartManager","SetConfigVersion","0.115");
+        __U.SendMessage("MozartManager","SetConfigURL",CONFIG_URL);
       }
 
       function SetInstance(unityInstance)
@@ -123,7 +124,6 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-            console.log("MZKART SETTING INSTANCE");
             SetInstance(unityInstance);
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);

@@ -42,6 +42,9 @@
         /// </summary>
         public WebServices webs;
 
+        public delegate void APP_READY();
+        public event APP_READY onReady;
+
         public delegate void ON_USER_CHANGE();
         public ON_USER_CHANGE onUserChangedEvent;
 
@@ -100,9 +103,12 @@
             if (onLoggedInEvent != null) onLoggedInEvent.Invoke();
         }
 
-        public void SetConfigVersion(string version)
+        public string configURL = "https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json";
+        public void SetConfigURL(string url)
         {
-            Debug.Log("SETTING CONFIG VERSION TO" + version);
+            Debug.Log("SETTING CONFIG URL TO " + url);
+            configURL = url;
+            if (onReady != null) onReady();
         }
         /// <summary>
         /// Requests additional user data like balances, nfts, and user info
