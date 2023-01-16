@@ -23,9 +23,16 @@ public class KartRemoteConfig : MozartBehaviorBase
     void Start()
     {
         Debug.Log("VERSION  :" + Application.version);
-        GetManager().onReady += TriggerLoadServerConfig;
-        Application.ExternalCall("PlayerLoaded", null);
         
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            GetManager().onReady += TriggerLoadServerConfig;
+            Application.ExternalCall("PlayerLoaded", null);
+        }
+        else
+        {
+            TriggerLoadServerConfig();
+        }
     }
 
     void TriggerLoadServerConfig()

@@ -15,7 +15,7 @@ public class MozartStoreInfoPanelController : MozartNFTInfoPanelController
         public override void SetData(NFTItem item)
         {
             currentItem = item;
-            nameText.text = item.name;
+            nameText.text = item.name + " $" + item.price.ToString();
             descriptionText.text = item.description;
         }
     }
