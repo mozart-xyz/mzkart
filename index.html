@@ -28,8 +28,9 @@
       var CONFIG_URL = "https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config_test.json"
       function PlayerLoaded()
       {
-        alert("PLAYER LOAD COMPLETED CALLED FROM C#");
+        console.log("PLAYER LOAD COMPLETED CALLED FROM C#");
         __U.SendMessage("MozartManager","SetConfigURL",CONFIG_URL);
+        if(CONFIG_URL.indexOf("test") != -1) unityShowBanner("RUNNING TEST MODE:" + CONFIG_URL);
       }
 
       function SetInstance(unityInstance)
@@ -77,7 +78,6 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Mozart",
         productName: "Mozart Karts",
-        //**************** NOTE:: PROJECT VERSION BELOW CONTROLS IF GAME WILL RUN ON TEST NET OR STAGING.  VERIONS ABOVE 1 WILL BE LIVE.  BELOW 1 WILL BE TEST ***/
         productVersion: "0.53",
         bundleVersion:"0.56",
         version:"0.57",
