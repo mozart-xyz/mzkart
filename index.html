@@ -123,10 +123,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
+            console.log("MZKART SETTING INSTANCE");
+            SetInstance(unityInstance);
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-            console.log("Setting instance");
-            SetInstance(unityInstance);
           };
         }).catch((message) => {
           alert(message);
