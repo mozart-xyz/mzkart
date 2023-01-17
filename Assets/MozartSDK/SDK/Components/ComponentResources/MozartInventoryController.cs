@@ -14,7 +14,6 @@
     /// </summary>
     public class MozartInventoryController : MozartBehaviorBase
     {
-        public List<NFTItem> items = new List<NFTItem>();
         private List<NFTGridCellController> uiCells = new List<NFTGridCellController>();
 
         public virtual List<NFTItem> GetItems()
@@ -61,7 +60,6 @@
         /// </summary>
         private void InventoryLoaded()
         {
-            items = GetManager().inventoryItems;
             scroller.DataChanged();
         }
 

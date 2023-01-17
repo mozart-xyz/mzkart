@@ -28843,7 +28843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1284615909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33396,7 +33396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830837997056091327, guid: 7abb09058d31e4558b38a428c0b28874, type: 3}
       propertyPath: cellPerRow
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4830837997056091327, guid: 7abb09058d31e4558b38a428c0b28874, type: 3}
       propertyPath: m_CellSize.x
@@ -33408,7 +33408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4830837997056091327, guid: 7abb09058d31e4558b38a428c0b28874, type: 3}
       propertyPath: matchContentWidth
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4830837997331896141, guid: 7abb09058d31e4558b38a428c0b28874, type: 3}
       propertyPath: m_Color.b

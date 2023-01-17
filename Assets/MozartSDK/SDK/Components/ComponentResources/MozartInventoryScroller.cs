@@ -19,21 +19,21 @@
         private IUnlimitedScroller unlimitedScroller;
         public ToggleGroup toggleGroup;
         public List<NFTItem> items;
+
         public void Generate()
         {
-            inventoryController.items = inventoryController.GetItems();
             if (!toggleGroup)
             {
                 toggleGroup = this.gameObject.AddComponent<ToggleGroup>();
             }
             unlimitedScroller.Clear();
             List<NFTGridCellController> cells = new List<NFTGridCellController>();
-            unlimitedScroller.Generate(cell, inventoryController.items.Count, (index, iCell) =>
+            unlimitedScroller.Generate(cell, inventoryController.GetItems().Count, (index, iCell) =>
             {
                 var regularCell = iCell as NFTGridCellController;
                 if (regularCell != null)
                 {
-                    regularCell.SetupCell(inventoryController, inventoryController.items[index]);
+                    regularCell.SetupCell(inventoryController, inventoryController.GetItems()[index]);
                     regularCell.selection.group = toggleGroup;
                     cells.Add(regularCell);
                     regularCell.onGenerated?.Invoke(index);

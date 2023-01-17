@@ -26,7 +26,6 @@ namespace Mozart
 
         private void StoreLoaded()
         {
-            items = GetManager().storeItems;
             scroller.DataChanged();
         }
     }
