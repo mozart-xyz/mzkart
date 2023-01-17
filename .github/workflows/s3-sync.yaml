@@ -34,5 +34,5 @@ jobs:
 
           # Sync assets to s3 remote
           s3path=s3://mozart-assets-001/testnet-kart-game
-          aws s3 sync --exclude ".git/*" --exlude ".gitignore" ./ $s3path
+          aws s3 sync --exclude ".git/*" --exclude ".gitignore" ./ $s3path
 
