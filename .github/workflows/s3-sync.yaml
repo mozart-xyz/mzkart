@@ -30,9 +30,14 @@ jobs:
 
       - name: Copy files to the s3 website content bucket
         run: |
-          sed -i -e 's#main/kart_remote_config.json#testnet/kart_remote_config_testnet.json#g' index.html
+          sed -i -e 's#main/kart_remote_config.json#settings/kart_remote_config_testnet.json#g' index.html
 
           # Sync assets to s3 remote
           s3path=s3://mozart-assets-001/testnet-kart-game
           aws s3 sync --exclude ".git/*" --exclude ".gitignore" ./ $s3path
+
+          curl ${{ secrets.TESTNET_DEPLOYMENT_WEBHOOK }}
+      - name: Kick off new deploy
+        run: |
+          curl ${{ secrets.TESTNET_DEPLOYMENT_WEBHOOK }}
 
