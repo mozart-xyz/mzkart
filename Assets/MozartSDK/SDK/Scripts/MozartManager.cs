@@ -216,7 +216,6 @@
                
                 foreach (ForSaleFactoryNft nft in forSale)
                 {
-
                     NFTItem newItem = new NFTItem { name = nft.name, image = nft.imageUrl, price = nft.price, priceTokenName = nft.priceTokenName, priceTokenId = nft.priceTokenId, itemTemplateId=nft.factoryListingId };
                     if (settings.logging) Debug.Log(JsonUtility.ToJson(newItem));
                     storeItems.Add(newItem);
@@ -241,7 +240,7 @@
         {
             int startingBalance = userData.GetBalance();
             int retryCount = 0;
-            while (startingBalance == userData.GetBalance() && retryCount < 50)
+            while (startingBalance == userData.GetBalance() && retryCount < 5000)
             {
                 retryCount++;
                 yield return new WaitForSeconds(5f);

@@ -15,6 +15,7 @@
     public class NFTGridCellController : RegularCell
     {
         public TextMeshProUGUI text;
+        public TextMeshProUGUI price;
         public RawImage image;
         public MozartInventoryController inventoryController;
         public NFTItem cellData;
@@ -29,6 +30,7 @@
         {
             inventoryController = inventory;
             cellData = data;
+            price.text = data.price;
             SetupClickHandler();
             Redraw();
         }

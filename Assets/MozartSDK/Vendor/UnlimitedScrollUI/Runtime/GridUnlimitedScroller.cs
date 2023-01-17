@@ -95,6 +95,8 @@ namespace UnlimitedScrollUI {
         /// </summary>
         [Tooltip("Max size of cached cells.")]
         public uint cacheSize;
+
+        public bool dontChangeAnchors = false;
         
         /// <summary>
         /// The <c>ScrollRect</c> component on ScrollView.
@@ -292,10 +294,14 @@ namespace UnlimitedScrollUI {
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
             contentTrans.anchoredPosition = contentPosition;
-            contentTrans.anchorMin = Vector2.up;
-            contentTrans.anchorMax = Vector2.up;
+
+            contentTrans.anchorMin = new Vector2(0, 0);// Vector2.up;
+            contentTrans.anchorMax = new Vector2(1, 1);// Vector2.up;
             
+
+
             currentCells = new List<Cell>();
             
             pendingDestroyGo = new GameObject("[Cache Node]");

@@ -18,6 +18,7 @@
         public MozartInventoryController inventoryController;
         private IUnlimitedScroller unlimitedScroller;
         public ToggleGroup toggleGroup;
+        public List<NFTItem> items;
         public void Generate()
         {
             inventoryController.items = inventoryController.GetItems();
