@@ -8,6 +8,7 @@
         public string DashboardUrl = "https://testnet-dashboard.mozart.xyz";
         public string GameIdentifier;
         public string GameCurrencyIdentifier;
+        public string MarketplaceURL = "https://mozart-kart.webflow.io";
         public bool logging = false;
         public string apiBaseUrl = "https://staging-api-ij1y.onrender.com";
         public void Log(string message)

@@ -14,6 +14,7 @@ public class KartRemoteData
     public string car_1 = "";
     public string car_2 = "";
     public string car_3 = "";
+    public string marketplace_url = "https://mozart-kart.webflow.io/";
 }
 
 
@@ -43,7 +44,13 @@ public class KartRemoteConfig : MozartBehaviorBase
             base.GetManager().settings.GameCurrencyIdentifier = data.token_id;
             base.GetManager().settings.GameIdentifier = data.game_id;
             base.GetManager().settings.DashboardUrl = data.dashboard_url;
+            if(data.marketplace_url != null) base.GetManager().settings.MarketplaceURL = data.marketplace_url;
         }, true);
+    }
+
+    public void LoadMarketplace()
+    {
+        Application.OpenURL(base.GetManager().settings.MarketplaceURL);
     }
 
     public void SetDataManually(KartRemoteData data)
@@ -52,5 +59,6 @@ public class KartRemoteConfig : MozartBehaviorBase
         base.GetManager().settings.GameCurrencyIdentifier = data.token_id;
         base.GetManager().settings.GameIdentifier = data.game_id;
         base.GetManager().settings.DashboardUrl = data.dashboard_url;
+        if(data.marketplace_url != null) base.GetManager().settings.MarketplaceURL = data.marketplace_url;
     }
 }

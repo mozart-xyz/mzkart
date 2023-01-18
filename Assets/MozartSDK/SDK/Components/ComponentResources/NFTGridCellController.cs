@@ -16,6 +16,7 @@
     {
         public TextMeshProUGUI text;
         public TextMeshProUGUI price;
+        public GameObject priceNode;
         public RawImage image;
         public MozartInventoryController inventoryController;
         public NFTItem cellData;
@@ -31,6 +32,7 @@
             inventoryController = inventory;
             cellData = data;
             price.text = data.price;
+            priceNode.SetActive(data.price != null && data.price.Length > 0);
             SetupClickHandler();
             Redraw();
         }

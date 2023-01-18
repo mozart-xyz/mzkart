@@ -1,6 +1,7 @@
 {
   "api_url": "https://testnet-api.mozart.xyz",
   "dashboard_url": "https://testnet-dashboard.mozart.xyz",
+  "marketplace_url" : "https://mozart-kart.webflow.io",
   "game_id": "@mzkart",
   "token_id": "@mzkart.__default_ft__"
 }
