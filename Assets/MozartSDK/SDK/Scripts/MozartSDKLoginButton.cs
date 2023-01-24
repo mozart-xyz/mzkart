@@ -128,6 +128,7 @@
             while (state == LOGIN_STATE.WAITING_FOR_LOGIN)
             {
                 tryCount++;
+                if(tryCount % 2 == 0) LoginButton.enabled = true;
                 if (tryCount > maxRetry)
                 {
                     state = LOGIN_STATE.LOGIN_TIMEOUT;

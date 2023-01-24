@@ -6,6 +6,8 @@
     using UnityEngine.UI;
     using UnlimitedScrollUI;
     using TMPro;
+    using System;
+
     /// <summary>
     /// This is the code that controls how a Grid Cell renders itself.
     /// You may want to override this class and use your own custom cell logic.
@@ -66,6 +68,7 @@
 
         IEnumerator GetTexture(string url)
         {
+            url += "?break=" + DateTime.Now.Ticks.ToString();
             UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
             yield return www.SendWebRequest();
 
