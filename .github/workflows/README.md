@@ -1,7 +1,11 @@
-## Cloudfront
+## Cloudfront and DNS
 
-```bash
-kart-game-staging = "dlbspovqyte1o.cloudfront.net"
-kart-game-testnet = "dwiq4olsnwp4n.cloudfront.net"
-```
+
+- Staging
+  - cloudfront: dlbspovqyte1o.cloudfront.net
+  - dns: staging-kart.mozart.xyz
+
+- Testnet
+  - cloudfront: dwiq4olsnwp4n.cloudfront.net
+  - dns: testnet-kart.mozart.xyz
 
