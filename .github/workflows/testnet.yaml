@@ -1,0 +1,29 @@
+name: testnet
+
+on:
+  push:
+    branches:
+    - testnet
+
+jobs:
+  s3_sync_files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1
+
+      - name: Copy files to the s3 website content bucket
+        run: |
+          # Config locations
+          sed -i -e 's#https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json#https://kart-game-testnet.s3.us-west-1.amazonaws.com/kart_remote_config_testnet.json#g' index.html
+
+          # https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json
+          # https://kart-game-testnet.s3.us-west-1.amazonaws.com/kart_remote_config_testnet.json
+
+          # S3 Upload
+          aws s3 sync --exclude ".git/*" --exclude ".gitignore" ./ s3://kart-game-testnet
