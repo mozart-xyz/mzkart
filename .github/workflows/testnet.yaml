@@ -1,9 +1,9 @@
-name: s3sync
+name: testnet
 
 on:
   push:
     branches:
-    - staging
+    - testnet
 
 jobs:
   s3_sync_files:
@@ -23,7 +23,7 @@ jobs:
           sed -i -e 's#https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json#https://kart-game-testnet.s3.us-west-1.amazonaws.com/kart_remote_config_testnet.json#g' index.html
 
           # https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json
-          # https://kart-game-staging.s3.us-west-1.amazonaws.com/kart_remote_config.json
+          # https://kart-game-testnet.s3.us-west-1.amazonaws.com/kart_remote_config_testnet.json
 
           # S3 Upload
           aws s3 sync --exclude ".git/*" --exclude ".gitignore" ./ s3://kart-game-testnet
