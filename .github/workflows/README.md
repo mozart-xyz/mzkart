@@ -1,10 +1,7 @@
+## Cloudfront
 
-
-staging url
-
-dlbspovqyte1o.cloudfront.net
-
-
-
-testnet url
+```bash
+kart-game-staging = "dlbspovqyte1o.cloudfront.net"
+kart-game-testnet = "dwiq4olsnwp4n.cloudfront.net"
+```
 

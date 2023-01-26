@@ -19,11 +19,11 @@ jobs:
 
       - name: Copy files to the s3 website content bucket
         run: |
-          # Change config
-          sed -i -e 's#https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json#settings/kart_remote_config_testnet.json#g' index.html
+          # Config locations
+          sed -i -e 's#https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json#https://kart-game-testnet.s3.us-west-1.amazonaws.com/kart_remote_config_testnet.json#g' index.html
 
           # https://raw.githubusercontent.com/mozart-xyz/mzkart/main/kart_remote_config.json
-          # 
+          # https://kart-game-staging.s3.us-west-1.amazonaws.com/kart_remote_config.json
 
-          # Sync assets to s3 remote
-          aws s3 sync --exclude ".git/*" --exclude ".gitignore" ./ s3://kart-game-staging
+          # S3 Upload
+          aws s3 sync --exclude ".git/*" --exclude ".gitignore" ./ s3://kart-game-testnet
