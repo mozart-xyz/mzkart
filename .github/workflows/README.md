@@ -1,11 +1,5 @@
-## Cloudfront and DNS
+## Cloudfront
 
+- Staging: dz6jbiaupqitb.cloudfront.net
 
-- Staging
-  - cloudfront: dlbspovqyte1o.cloudfront.net
-  - dns: staging-kart.mozart.xyz
-
-- Testnet
-  - cloudfront: dwiq4olsnwp4n.cloudfront.net
-  - dns: testnet-kart.mozart.xyz
-
+- Testnet: d1fk1qobbd5e9s.cloudfront.net
