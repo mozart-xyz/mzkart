@@ -2,6 +2,6 @@
   "api_url": "https://staging-api-ij1y.onrender.com",
   "dashboard_url": "https://staging-dashboard-4we0.onrender.com",
   "marketplace_url" : "https://mozart-kart.webflow.io",
-  "game_id": "@mzkart100game1",
-  "token_id": "@mzkart100game1.__default_ft__"
+  "game_id": "@mzkart",
+  "token_id": "@mzkart.default_token"
 }

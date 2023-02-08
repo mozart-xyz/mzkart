@@ -5,12 +5,12 @@ using System.Collections;
 
 public class ForSaleFactoryNft
 {
+    public string nftTemplateListingId;
 
-	/*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
-	public string factoryListingId;
+    public string nftTemplateListingKey;
 
-	/*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
-	public string name;
+    /*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
+    public string name;
 
 	/*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
 	public string imageUrl;
