@@ -16,7 +16,7 @@
                 foreach(V1FtsBalances balance in this.extraData.balances)
                 {
                     string currencyId = MozartManager.instance.settings.GameCurrencyIdentifier;
-                    currencyId = currencyId.Replace("@", "");
+                    //currencyId = currencyId.Replace("@", "");
                     Debug.Log("CURRENCY IDS:" + currencyId + " :: " + balance.ftKey);
                     if (balance.ftKey == currencyId)
                     {
